@@ -15,7 +15,18 @@ export default function Meme(){
        fetch("https://api.imgflip.com/get_memes")
          .then(res => res.json())
          .then(data => setAllMemes(data.data.memes))
-    },[])
+    },[]) 
+
+    /*  In case you need to use an async function
+    
+        React.useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
+    }, []) */
 
     
     
@@ -63,7 +74,7 @@ export default function Meme(){
                     className="form-button"
                     onClick={getMemeImage}
                 >
-                    Get a new meme image 🖼
+                    Get a new meme image 📸
                 </button>
             </div>
             <div className="meme">
