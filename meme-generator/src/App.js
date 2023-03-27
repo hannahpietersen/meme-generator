@@ -1,11 +1,11 @@
 import React from "react"
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Meme from "./components/Meme";
 
 export default function App() {
   return (
     <div>
-      <Header />
+      <Navbar />
       <Meme />
     </div>
   );

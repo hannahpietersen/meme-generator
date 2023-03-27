@@ -1,170 +1,113 @@
-:root {
-  --clr-accent-dark: #672280;
-  --clr-accent-light: #a626d3;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
 
-  --ff-main: "Karla", sans-serif;
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --clr-primary: #fff;
-    --clr-secondary: #1d1d1c;
+html, body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clr-primary: #000;
-    --clr-secondary: #d5d4d8;
+  body{
+    font-family: 'Karla', sans-serif;
   }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  input, button{
+    font-family: 'Karla', sans-serif;
   }
-}
-
-
-
-body {
-  font-family: "Karla", sans-serif;
-  margin: 0;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  padding: 2.25em;
-  /* min-height: 100vh; */
-  background-color: var(--clr-primary);
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 4em;
-  padding: 1em;
-  background: linear-gradient(
-    90deg,
-    var(--clr-accent-dark) 1.18%,
-    var(--clr-accent-light) 100%
-  );
-  color: var(--clr-primary);
-
-}
-
-.header-image {
-  height: 100%;
-  margin-right: 6px;
-}
-
-.header-title {
-  font-size: 1.25rem;
-  margin-right: auto;
-}
-
-.header-project {
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.form {
+  .App{
+      width: 550px;
+      margin: 40px auto;
+  }
+  .nav{
+    height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  }
+  .logo-name{
+      font-size: 22px;
+      font-weight: 700;
+      margin-left: 8px;
+  }
+  .nav-title{
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .main{
+    padding: 40px;
+  }
+.form{
   display: grid;
-  grid-template: 40px 40px / 1fr 1fr;
-  gap: 17px;
-  margin: auto;
-  max-width: 50rem;
-  margin-bottom: 17px;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-
-.form-input {
-  font-family: var(--ff-main);
+.form-input{
+  font-size: 14px;
+  text-indent: 10px;
+  border: 1px solid #D5D4D8;
   border-radius: 5px;
-  border: 1px solid var(--clr-secondary);
-  padding: 1em 3em 1em 1em;
+  margin-top: 10px;
 }
-
-.form-button {
-  /* to get the entire grid's width */
+.form-btn{
   grid-column: 1 / -1;
-  padding: 1em 3em;
-  /* max-width: 100vw; */
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 5px;
-  background: linear-gradient(
-    90deg,
-    var(--clr-accent-dark) 1.18%,
-    var(--clr-accent-light) 100%
-  );
-  color: white;
+  text-align: center;
+  background: linear-gradient(90deg, #711F8D 1.14%, #A818DA 100%);
+  color: #fff;
   border: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
   cursor: pointer;
-
+  transition: 0.3s ease;
 }
-
-.form-button:hover {
-  background: var(--clr-accent-dark);
+.form-btn:hover{
+  filter: brightness(1.2);
 }
-
-.form--button:focus {
-  outline: none;
+.form-btn:active{
+  transform: translateY(3px);
 }
-
 .meme {
   position: relative;
- 
-  
+  margin-top: 40px;
 }
-
-.meme-image {
+.meme-image{
   max-width: 100%;
   border-radius: 3px;
-  max-width: 40em;
-  
-  
-  
 }
-
 .meme-text {
   position: absolute;
   width: 80%;
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  margin: 0.5em 0;
+  margin: 15px 0;
   padding: 0 5px;
   font-family: impact, sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
   text-transform: uppercase;
   color: white;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
-    -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
-    2px 2px 5px #000;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
 }
 
 .bottom {
