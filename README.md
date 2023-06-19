@@ -22,7 +22,7 @@ This is the repository to the meme-generator project
 
 ### Screenshot
 
-[screenshot](tenzies-game/src/screenshots/screenshot.png)
+[screenshot](meme-generator/src/screenshots/screenshot.png)
 
 
 ### Links
